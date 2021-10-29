@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import { v4 as uuid4 } from 'uuid';
 
 function useToDoList() {
@@ -9,7 +9,7 @@ function useToDoList() {
     setTasks((tasksSoFar) => ([ ...tasksSoFar, task ]));
   };
 
-  const toggleTask = (id) => {
+  const toggleTask = useCallback((id) => {
     const updatedTasks = tasks.map((t) => {
       if (t.id !== id) return t;
       const task = { ...t, done: !t.done};
@@ -18,7 +18,7 @@ function useToDoList() {
     });
 
     setTasks(updatedTasks);
-  };
+  });
 
   const removeTask = () => {
     if (tasks.length === 0) return;

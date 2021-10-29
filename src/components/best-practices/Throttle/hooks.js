@@ -7,9 +7,12 @@ function useThrottle(originalCallback) {
     if (isActive) return;
 
     setActive(true);
-    console.log(originalCallback);
+    console.log('The callback is running');
     originalCallback(...args)
-      .then(() => setActive(false));
+      .then(() => {
+        setActive(false);
+        console.log('The callback has returned. The component is no longer active');
+      });
   };
 
   return { isActive, callback };

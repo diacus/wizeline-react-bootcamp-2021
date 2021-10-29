@@ -9,12 +9,13 @@ function Throttle() {
 
   const { isActive, callback } = useThrottle(doSomethingDifficult);
 
-  const message = isActive ? 'Loading...' : 'Ready';
+  const title = isActive ? 'Loading...' : 'Ready';
+  const label = isActive ? 'Please wait...' : 'Click me!';
 
   return (
-    <Box>
-      <Text>{message}</Text>
-      <Button onClick={callback}>Click me!</Button>
+    <Box margin="128px auto" paddingX="128px">
+      <Text>{title}</Text>
+      <Button onClick={callback}>{label}</Button>
     </Box>
   );
 };

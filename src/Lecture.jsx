@@ -1,23 +1,47 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 
-import { Body, Box, Image, Text, Link } from './components/atoms';
+import { Body, Box, Flex, Nav, List, Item, Text } from './components/atoms';
 
-import { Throttle } from './components/best-practices';
-
-const lessonsAvailable = {
-  Throttle,
-};
+import { Memo, Throttle } from './components/best-practices';
 
 function Lecture() {
-  const [currentLesson, setLesson] = useState('Throttle');
-  const Lesson = lessonsAvailable[currentLesson];
-
   return (
     <Body>
-      <Box border="solid 0.2px blue" margin="200px auto" padding="128px">
-        <Lesson />
-      </Box>
+      <Router>
+        <Box>
+          <Nav>
+            <List>
+              <Item><Link to="/">Home</Link></Item>
+              <Item><Link to="/throttle">Throttle</Link></Item>
+              <Item><Link to="/memo">Memo</Link></Item>
+            </List>
+          </Nav>
+        </Box>
+        <Box
+          backgroundColor="#fafafa"
+          border="solid 0.2px #ddd"
+          borderRadius="4px 24px"
+          width="640px"
+          height="480px"
+          margin="200px auto"
+          overflow="scroll"
+        >
+          <Switch>
+            <Route path="/memo">
+              <Memo />
+            </Route>
+            <Route path="/throttle">
+              <Throttle />
+            </Route>
+            <Route path="/">
+              <Flex alignItems="center">
+                <Text margin="auto">Lecture 9</Text>
+              </Flex>
+            </Route>
+          </Switch>
+        </Box>
+      </Router>
     </Body>
   );
 }

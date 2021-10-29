@@ -18,7 +18,7 @@ function useToDoList() {
     });
 
     setTasks(updatedTasks);
-  });
+  }, []);
 
   const removeTask = () => {
     if (tasks.length === 0) return;

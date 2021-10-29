@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 
 import { Body, Box, Flex, Nav, List, Item, Text } from './components/atoms';
 
-import { Memo, Throttle } from './components/best-practices';
+import { Callback, Memo, Throttle } from './components/best-practices';
 
 function Lecture() {
   return (
@@ -15,6 +15,7 @@ function Lecture() {
               <Item><Link to="/">Home</Link></Item>
               <Item><Link to="/throttle">Throttle</Link></Item>
               <Item><Link to="/memo">Memo</Link></Item>
+              <Item><Link to="/callback">Callback</Link></Item>
             </List>
           </Nav>
         </Box>
@@ -28,6 +29,9 @@ function Lecture() {
           overflow="scroll"
         >
           <Switch>
+            <Route path="/callback">
+              <Callback />
+            </Route>
             <Route path="/memo">
               <Memo />
             </Route>

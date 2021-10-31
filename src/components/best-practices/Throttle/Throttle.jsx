@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Button, Text } from '../../atoms';
+import { Box, Button, Text, Title } from '../../atoms';
 import { doSomethingDifficult } from '../../../api/fake-api';
 
 import useThrottle from './hooks';
@@ -14,8 +14,10 @@ function Throttle() {
 
   return (
     <Box margin="128px auto" paddingX="128px">
-      <Text>{title}</Text>
-      <Button onClick={callback}>{label}</Button>
+      <Title>{title}</Title>
+      <Box margin="64px auto">
+        <Button onClick={callback}>{label}</Button>
+      </Box>
     </Box>
   );
 };

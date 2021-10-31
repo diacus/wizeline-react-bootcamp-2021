@@ -23,3 +23,4 @@ function areEqual(prevProps, nextProps) {
 }
 
 export default React.memo(Task, areEqual);
+//export default Task;

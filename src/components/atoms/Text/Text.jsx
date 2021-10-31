@@ -21,10 +21,7 @@ Text.propTypes = {
 
 Text.defaultProps = {
   color: 'black',
-  fontFamily: 'openSans',
-  fontSize: 5,
   hyphens: 'auto',
-  lineHeight: 5,
 };
 
 export default Text;

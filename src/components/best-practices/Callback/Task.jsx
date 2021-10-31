@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Flex, Button } from '../../atoms';
+import { Flex } from '../../atoms';
 
 const Container = styled(Flex)`
   background: #dfdfdf;

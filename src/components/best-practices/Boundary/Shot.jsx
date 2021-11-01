@@ -19,7 +19,6 @@ class Shot extends React.Component {
 
   render() {
     if (this.state && this.state.bullet === 4) {
-      this.setState({ ...this.state, bullet: 0 });
       throw new Error('Hit!');
     };
 

@@ -1,39 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Box, Button, Flex, Text, Title } from '../../atoms';
 
-class Shot extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { shots: 0, bullet: 0 };
 
-    this.bang = this.bang.bind(this);
-  }
+function Shot() {
+  const [shotCount, setShotCount] = useState(0);
+  const [bullet, setBullet] = useState(0);
 
-  bang() {
+  const bang = () => {
     const newBullet = Math.floor(Math.random() * 6);
-    const shotCount = this.state.shots + 1;
-
-    this.setState({ shots: shotCount, bullet: newBullet });
+    setShotCount(shotCount + 1);
+    setBullet(newBullet);
   }
 
-  render() {
-    if (this.state && this.state.bullet === 4) {
-      throw new Error('Hit!');
-    };
+  if (bullet === 4) throw new Error('Hit!');
 
-    return (
-      <Box textAlign="center">
-        <Title>Ruleta Rusa</Title>
-        <Flex width="100%" paddingX="64px" paddingTop="96px">
-          Has sobrevivido a {this.state.shots} disparos
-        </Flex>
-        <Flex width="100%" paddingX="64px" paddingTop="96px">
-          <Button onClick={this.bang}>Bang!</Button>
-        </Flex>
-      </Box>
-    );
-  }
+  return  (
+    <Box textAlign="center">
+      <Title>Ruleta Rusa</Title>
+      <Flex width="100%" paddingX="64px" paddingTop="96px">
+        {getMessage(shotCount)}
+      </Flex>
+      <Flex width="100%" paddingX="64px" paddingTop="96px">
+        <Button onClick={bang}>Bang!</Button>
+      </Flex>
+    </Box>
+  );
 }
 
+function getMessage(shotCount) {
+  if (shotCount === 0) return 'En verdad quieres jugar?';
+  if (shotCount === 1) return 'Suerte de principiante';
+
+  return `Has sobrevivido ${shotCount} disparos`;
+}
 export default Shot;

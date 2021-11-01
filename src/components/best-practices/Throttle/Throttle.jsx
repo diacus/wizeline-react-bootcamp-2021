@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Button, Text, Title } from '../../atoms';
+import { Box, Button, Title } from '../../atoms';
 import { doSomethingDifficult } from '../../../api/fake-api';
 
 import useThrottle from './hooks';
@@ -13,7 +13,7 @@ function Throttle() {
   const label = isActive ? 'Please wait...' : 'Click me!';
 
   return (
-    <Box margin="128px auto" paddingX="128px">
+    <Box textAlign="center">
       <Title>{title}</Title>
       <Box margin="64px auto">
         <Button onClick={callback}>{label}</Button>

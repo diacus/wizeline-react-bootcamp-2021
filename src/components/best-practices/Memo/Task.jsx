@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { Flex } from '../../atoms';
 
@@ -11,16 +11,14 @@ const Container = styled(Flex)`
 `;
 
 function Task({ id, content }) {
-  console.log(`Rendering task ${id}`);
+  useEffect(() => console.log(`Rendering task ${id}`), [id]);
+
   return <Container id={id}>{content}</Container>;
 }
 
-function areEqual(prevProps, nextProps) {
-  console.log('comparing...');
-
+function shouldAvoidRender(prevProps, nextProps) {
   if (prevProps.id === nextProps.id) return true;
   return false;
 }
 
-export default React.memo(Task, areEqual);
-//export default Task;
+export default React.memo(Task, shouldAvoidRender);

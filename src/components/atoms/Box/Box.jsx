@@ -25,6 +25,7 @@ const Box = styled.div`
   ${space}
   ${typography}
   box-sizing: border-box;
+  scrollbar-width: none;
 `;
 
 Box.propTypes = {

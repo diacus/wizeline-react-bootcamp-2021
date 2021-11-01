@@ -11,10 +11,7 @@ function useToDoList() {
 
   const removeTask = () => {
     if (tasks.length === 0) return;
-
-    const [first, ...rest] = tasks;
-    console.debug(`Deleting task ${first.value}`);
-    setTasks(rest);
+    setTasks(tasks.slice(1));
   };
 
   return { tasks, addTask, removeTask };

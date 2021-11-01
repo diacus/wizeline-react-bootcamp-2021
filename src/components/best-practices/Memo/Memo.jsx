@@ -7,6 +7,7 @@ import {
   Flex,
   Item,
   List,
+  Title,
 } from '../../atoms';
 
 import Task from './Task';
@@ -17,8 +18,9 @@ function Memo() {
   const { tasks, addTask, removeTask } = useToDoList();
 
   return (
-    <Box>
-      <Flex width="100%" height="400px" paddingTop="16px" overflow="scroll">
+    <Box textAlign="center">
+      <Title>To Do List</Title>
+      <Flex width="100%" height="350px" paddingTop="16px" overflow="scroll">
         <List>
           {tasks.map((task) => (
             <Item key={task.id}>

@@ -27,8 +27,6 @@ function Task({ id, done, content, onClick }) {
 }
 
 function areEqual(prevProps, nextProps) {
-  console.log('comparing...');
-
   if (prevProps.id !== nextProps.id) return false;
   if (prevProps.done !== nextProps.done) return false;
 

@@ -1,14 +1,28 @@
 import React from 'react';
+import styled from 'styled-components';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 
-import { Body, Box, Flex, Nav, List, Item, Text } from './components/atoms';
+import { Body, Box, Flex, Nav, Text } from './components/atoms';
 
 import {
   Callback,
-  Expensive,
+  Remember,
   Memo,
   Throttle,
 } from './components/best-practices';
+
+const NavBox = styled(Box)`
+  padding: 8px 16px;
+  border-radius: 8px 8px 0 0;
+  &:hover {
+    color: #4CAF50;
+    background-color: #fafafa;
+  }
+`;
+
+const RouteLink = styled(Link)`
+  text-decoration: none;
+`;
 
 function Lecture() {
   return (
@@ -16,22 +30,21 @@ function Lecture() {
       <Router>
         <Box>
           <Nav>
-            <Flex>
-              <Box><Link to="/">Home</Link></Box>
-              <Box><Link to="/throttle">Throttle</Link></Box>
-              <Box><Link to="/memo">Memo</Link></Box>
-              <Box><Link to="/expensive">Expensive</Link></Box>
-              <Box><Link to="/callback">Callback</Link></Box>
+            <Flex display="inline-flex" flexWrap="wrap">
+              <NavBox><RouteLink to="/">Home</RouteLink></NavBox>
+              <NavBox><RouteLink to="/throttle">Throttle</RouteLink></NavBox>
+              <NavBox><RouteLink to="/memo">Memo</RouteLink></NavBox>
+              <NavBox><RouteLink to="/remember">Remember</RouteLink></NavBox>
+              <NavBox><RouteLink to="/callback">Callback</RouteLink></NavBox>
             </Flex>
           </Nav>
         </Box>
         <Box
           backgroundColor="#fafafa"
-          border="solid 0.2px #ddd"
-          borderRadius="4px 24px"
-          width="640px"
-          height="480px"
-          margin="32px auto"
+          width="100%"
+          minHeight="100vh"
+          margin="0 auto"
+          paddingY="32px"
           overflow="scroll"
         >
           <Switch>
@@ -41,8 +54,8 @@ function Lecture() {
             <Route path="/memo">
               <Memo />
             </Route>
-            <Route path="/expensive">
-              <Expensive />
+            <Route path="/remember">
+              <Remember />
             </Route>
             <Route path="/throttle">
               <Throttle />

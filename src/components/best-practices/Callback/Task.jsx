@@ -27,4 +27,4 @@ function Task({ id, done, content, onClick }) {
   );
 }
 
-export default React.memo(Task);
+export default Task;

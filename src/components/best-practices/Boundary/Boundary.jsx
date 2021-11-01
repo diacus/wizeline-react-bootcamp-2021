@@ -1,14 +1,9 @@
 import React from 'react';
 
-import HandleError from './HandleError';
-import Shot from './Shot';
+import { Box } from '../../atoms';
 
 function Boundary() {
-  return (
-    <HandleError message="Perdiste :(">
-      <Shot />
-    </HandleError>
-  );
+  return <Box />;
 }
 
 export default Boundary;

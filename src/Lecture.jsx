@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 
-import { Box, Flex, Nav, Text } from './components/atoms';
+import { Box, Flex, Nav, Text, Title } from './components/atoms';
 
 import {
   Boundary,
@@ -32,7 +32,7 @@ function Lecture() {
         <Box>
           <Nav>
             <Flex display="inline-flex" flexWrap="wrap">
-              <NavBox><RouteLink to="/">Home</RouteLink></NavBox>
+              <NavBox><RouteLink to="/">BPnP</RouteLink></NavBox>
               <NavBox><RouteLink to="/throttle">Throttle</RouteLink></NavBox>
               <NavBox><RouteLink to="/memo">Memo</RouteLink></NavBox>
               <NavBox><RouteLink to="/remember">Remember</RouteLink></NavBox>
@@ -67,7 +67,14 @@ function Lecture() {
             </Route>
             <Route path="/">
               <Flex alignItems="center">
-                <Text fontSize="3em" margin="200px auto">Lecture 9</Text>
+                <Title fontSize="3em" margin="0 auto" marginTop="128px">
+                  Lecture 9
+                </Title>
+              </Flex>
+              <Flex alignItems="center">
+                <Text fontSize="2em" margin="0 auto" marginTop="48px">
+                  Best Practices & Performance
+                </Text>
               </Flex>
             </Route>
           </Switch>

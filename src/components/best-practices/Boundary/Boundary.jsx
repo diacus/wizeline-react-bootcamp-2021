@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { Box, Button, Flex, Title } from '../../atoms';
-
 import HandleError from './HandleError';
 import Shot from './Shot';
 

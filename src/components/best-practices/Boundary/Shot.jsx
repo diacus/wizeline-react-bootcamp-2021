@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Box, Button, Flex, Text, Title } from '../../atoms';
+import { Box, Button, Flex, Title } from '../../atoms';
 
 
 function Shot() {

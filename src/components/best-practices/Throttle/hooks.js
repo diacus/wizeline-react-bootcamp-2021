@@ -11,7 +11,9 @@ function useThrottle(originalCallback) {
     originalCallback(...args)
       .then(() => {
         setActive(false);
-        console.log('The callback has returned. The component is no longer active');
+        console.log(
+          'The callback has returned. The component is no longer active'
+        );
       });
   };
 

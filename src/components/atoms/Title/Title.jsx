@@ -4,7 +4,7 @@ import Text from '../Text/Text';
 const Title = styled(Text)``;
 
 Title.defaultProps = {
-  fontSize: '3em',
+  as: 'h1',
 };
 
 export default Title;

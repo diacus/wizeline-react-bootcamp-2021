@@ -20,7 +20,7 @@ function Memo() {
   return (
     <Box textAlign="center">
       <Title>To Do List</Title>
-      <Flex width="100%" height="350px" paddingTop="16px" overflow="scroll">
+      <Flex width="100%" paddingTop="16px">
         <List>
           {tasks.map((task) => (
             <Item key={task.id}>
@@ -29,7 +29,14 @@ function Memo() {
           ))}
         </List>
       </Flex>
-      <Flex paddingX="64px" marginTop="32px" flexDirection="row" width="100%">
+      <Flex
+        paddingX="64px"
+        paddingY="32px"
+        position="fixed"
+        bottom="0"
+        flexDirection="row"
+        width="100%"
+      >
         <Button
           width="50%"
           marginRight="16px"

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { loremIpsum } from 'lorem-ipsum';
 
 import {
@@ -7,6 +7,7 @@ import {
   Flex,
   Item,
   List,
+  Title,
 } from '../../atoms';
 
 import Task from './Task';
@@ -16,24 +17,32 @@ import useToDoList from './hooks';
 function Callback() {
   const { tasks, addTask, removeTask, toggleTask } = useToDoList();
 
+  useEffect(() => console.log('To Do list render...'), []);
+
   return (
-    <Box>
-      <Flex width="100%" height="400px" paddingTop="16px" overflow="scroll">
+    <Box textAlign="center">
+      <Title>To Do List</Title>
+      <Flex width="100%" paddingTop="16px">
         <List>
           {tasks.map((task) => (
             <Item key={task.id}>
-
               <Task
                 content={task.value}
                 id={task.id}
-                done={task.done}
-                onClick={() => toggleTask(task.id)}
+                onClick={toggleTask}
               />
             </Item>
           ))}
         </List>
       </Flex>
-      <Flex paddingX="64px" marginTop="32px" flexDirection="row" width="100%">
+      <Flex
+        paddingX="64px"
+        paddingY="32px"
+        position="fixed"
+        bottom="0"
+        flexDirection="row"
+        width="100%"
+      >
         <Button
           width="50%"
           marginRight="16px"

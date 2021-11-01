@@ -2,9 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 
-import { Body, Box, Flex, Nav, Text } from './components/atoms';
+import { Box, Flex, Nav, Text } from './components/atoms';
 
 import {
+  Boundary,
   Callback,
   Remember,
   Memo,
@@ -26,7 +27,7 @@ const RouteLink = styled(Link)`
 
 function Lecture() {
   return (
-    <Body>
+    <Box>
       <Router>
         <Box>
           <Nav>
@@ -36,6 +37,7 @@ function Lecture() {
               <NavBox><RouteLink to="/memo">Memo</RouteLink></NavBox>
               <NavBox><RouteLink to="/remember">Remember</RouteLink></NavBox>
               <NavBox><RouteLink to="/callback">Callback</RouteLink></NavBox>
+              <NavBox><RouteLink to="/boundary">Boundary</RouteLink></NavBox>
             </Flex>
           </Nav>
         </Box>
@@ -60,6 +62,9 @@ function Lecture() {
             <Route path="/throttle">
               <Throttle />
             </Route>
+            <Route path="/boundary">
+              <Boundary />
+            </Route>
             <Route path="/">
               <Flex alignItems="center">
                 <Text fontSize="3em" margin="200px auto">Lecture 9</Text>
@@ -68,7 +73,7 @@ function Lecture() {
           </Switch>
         </Box>
       </Router>
-    </Body>
+    </Box>
   );
 }
 

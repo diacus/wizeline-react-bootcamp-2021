@@ -9,16 +9,18 @@ function useToDoList() {
     setTasks((tasksSoFar) => ([ ...tasksSoFar, task ]));
   };
 
-  const toggleTask =(id) => {
+  const toggleTask = useCallback((id) => {
     const updatedTasks = tasks.map((t) => {
       if (t.id !== id) return t;
       const task = { ...t, done: !t.done };
+
+      console.log(task);
 
       return task;
     });
 
     setTasks(updatedTasks);
-  };
+  }, []);
 
   const removeTask = () => {
     if (tasks.length === 0) return;

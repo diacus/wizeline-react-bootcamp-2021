@@ -7,7 +7,8 @@ const Container = styled(Flex)`
   border-radius: 8px;
   padding: 16px;
   margin-bottom: 8px;
-  width: 550px;
+  width: 100%;
+  margin: 8px auto;
   &:hover {
     cursor: pointer;
   }
@@ -18,7 +19,7 @@ function Task({ id, done, content, onClick }) {
   return (
     <Container
       id={id}
-      onClick={onClick}
+      onClick={() => onClick(id)}
       color={done ? '#999' : 'black'}
     >
       {content}
@@ -26,11 +27,4 @@ function Task({ id, done, content, onClick }) {
   );
 }
 
-function areEqual(prevProps, nextProps) {
-  if (prevProps.id !== nextProps.id) return false;
-  if (prevProps.done !== nextProps.done) return false;
-
-  return true;
-}
-
-export default React.memo(Task, areEqual);
+export default React.memo(Task);

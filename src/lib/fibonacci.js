@@ -5,8 +5,8 @@ function slowFibo(n) {
 
 function fastFibo(n) {
   const go = (n, a, b) => {
-    if (n === 0) return a;
-    if (n === 1) return b;
+    if (0 === n) return a;
+    if (1 === n) return b;
     return go(n - 1, b , a + b);
   };
 

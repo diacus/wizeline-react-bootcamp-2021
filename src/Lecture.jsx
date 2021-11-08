@@ -32,12 +32,11 @@ function Lecture() {
         <Box>
           <Nav>
             <Flex display="inline-flex" flexWrap="wrap">
-              <NavBox><RouteLink to="/">BPnP</RouteLink></NavBox>
-              <NavBox><RouteLink to="/throttle">Throttle</RouteLink></NavBox>
-              <NavBox><RouteLink to="/memo">Memo</RouteLink></NavBox>
-              <NavBox><RouteLink to="/remember">Remember</RouteLink></NavBox>
-              <NavBox><RouteLink to="/callback">Callback</RouteLink></NavBox>
-              <NavBox><RouteLink to="/boundary">Boundary</RouteLink></NavBox>
+              <NavBox><RouteLink to="/">SAnT</RouteLink></NavBox>
+              <NavBox><RouteLink to="/linting">Linting</RouteLink></NavBox>
+              <NavBox><RouteLink to="/unit">Unitary</RouteLink></NavBox>
+              <NavBox><RouteLink to="/integ">Integration</RouteLink></NavBox>
+              <NavBox><RouteLink to="/e2e">End to End</RouteLink></NavBox>
             </Flex>
           </Nav>
         </Box>
@@ -50,30 +49,27 @@ function Lecture() {
           overflow="scroll"
         >
           <Switch>
-            <Route path="/callback">
+            <Route path="/linting">
               <Callback />
             </Route>
-            <Route path="/memo">
+            <Route path="/unit">
               <Memo />
             </Route>
-            <Route path="/remember">
+            <Route path="/integ">
               <Remember />
             </Route>
-            <Route path="/throttle">
+            <Route path="/e2e">
               <Throttle />
-            </Route>
-            <Route path="/boundary">
-              <Boundary />
             </Route>
             <Route path="/">
               <Flex alignItems="center">
                 <Title fontSize="3em" margin="0 auto" marginTop="128px">
-                  Lecture 9
+                  Lecture 10
                 </Title>
               </Flex>
               <Flex alignItems="center">
                 <Text fontSize="2em" margin="0 auto" marginTop="48px">
-                  Best Practices & Performance
+                  Static Analysis & Testing
                 </Text>
               </Flex>
             </Route>

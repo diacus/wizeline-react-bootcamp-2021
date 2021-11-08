@@ -9,7 +9,7 @@ const Text = styled(Box)`
   -ms-hyphens: ${(props) => props.hyphens};
   -webkit-hyphens: ${(props) => props.hyphens};
   overflow-wrap: break-word;
-  word-break: ${(props) => (props.hyphens === 'none' ? 'break-word' : 'normal')};
+  word-break: ${(props) => ('none' === props.hyphens ? 'break-word' : 'normal')};
   ${system({
     textTransform: true,
   })}

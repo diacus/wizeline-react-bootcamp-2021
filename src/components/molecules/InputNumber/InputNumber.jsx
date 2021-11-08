@@ -7,7 +7,7 @@ function InputNumber({ value, onChange }) {
 
   return (
     <Flex paddingX="64px" marginTop="32px" flexDirection="row" width="100%">
-      <Label marginRight="16px">{value}</Label>
+      <Flex marginRight="16px">{value}</Flex>
       <Input
         ref={ref}
         type="range"

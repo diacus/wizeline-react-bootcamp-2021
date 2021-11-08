@@ -4,6 +4,9 @@ function slowFibo(n) {
 }
 
 function fastFibo(n) {
+  if (n < 0)
+    throw new Error(`The argument has to be positive or zero but got ${n}`);
+
   const go = (n, a, b) => {
     if (0 === n) return a;
     if (1 === n) return b;
